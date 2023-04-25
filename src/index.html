@@ -1,14 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Tarjeta de crédito válida</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    <script src="index.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Tarjeta de crédito válida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <script type="module" src="index.js"></script>
+
+  <header>
+    <div id="statusCardNumber">
+      <p><span id="cardNumberValidationStatus"></span></p>
+    </div>
+  </header>
+
+  <main id="content">
+    <div id="fakeMenu"></div>
+    <div>
+      <h1 id="tittle"> Card details </h1>
+      <hr />
+      <div id="container">
+        <div class="divs">
+          <div id="card">
+            <div class="cardItems">
+              <h2 id="lab">&lt L &gt</h2>
+              <p class="txtCard">CREDIT CARD</p>
+              <p class="txtCard" id="cardShowNumber">XXXX XXXX XXXX XXXX</p>
+              <p class="txtCard">Cardholder</p>
+            </div>
+            <img src="./images/chipCard.png" alt="chip Card" id="chipImg">
+          </div>
+          <div id="flags">
+            <div class="flagDiv">
+              <img src="./images/mastercard.png" alt="bandeira masterca" class="flag">
+            </div>
+            <div class="flagDiv">
+              <img src="./images/visa.png" alt="bandeira visa" class="flag">
+            </div>
+            <div class="flagDiv">
+              <img src="./images/elo.png" alt="bandeira elo" class="flag">
+            </div>
+            <div class="flagDiv">
+              <img src="./images/americanExpress2.png" alt="bandeira american express" class="flag">
+            </div>
+          </div>
+        </div>
+        <form id="form" class="divs">
+          <label class="formItems" for="cardNumber"> Card Number </label>
+          <input class="formItems" type="number" name="cardNumber" id="inputCardNumber" onkeypress="if(this.value.length==16) return false;" required>
+          <div class="formItemsSmall" id="expirationDiv">
+          <label class="sideBySide" for="expirationDate" id="expiration"> Expiration date </label>
+          <input class="sideBySide" type="text" name="expirationDate" id="expirationDate" required>
+        </div>
+        <div class="formItemsSmall" id="cvvDiv">
+          <label class="sideBySide" for="cvv" id="cVV"> CVV </label>
+          <input class="sideBySide" type="text" name="cvv" id="cvv" required>
+        </div>
+          <label class="formItems" for="cardholder"> Cardholder </label>
+          <input class="formItems"  type="text" name="cardholder" id="cardholder" required>
+          <button class="formItems" id="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer></footer>
+
+</body>
+
 </html>
