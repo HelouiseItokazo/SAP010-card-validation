@@ -21,24 +21,31 @@ O projeto foi criado para exercitar o desenvolvimento da auto-aprendizagem promo
 
 **2. Aplicação:**
 
-No README, conte-nos como você pensou sobre os usuários e qual foi o seu
-processo para definir o produto final em nível de experiência e interface.
-Estas perguntas servem de guia:
-
-Acho que aqui posso falar de responsividade...deixar a letra grande para quem tem baixa visão...
+A aplicação ainda está em construção e durante o passar do tempo será aprimorada para a aplicação de resposividade, exibição da bandeira, validação dos demais campos do formulário além de melhorias no layout.
 
 **3. Funcionalidades:**
 
-Quais funções o meu projeto tem?
+O projeto possui duas funcionalidades, sendo elas:
+
+**Validar o número do cartão:**
+
+Esta funcionalidade recebe o número de um cartão e retorna uma mensagem exibida em tela se este número está válido ou não, após o acionamento (click) do botão **submit**.
+
+**Mascarar o número do cartão:**
+
+Esta funcionalidade exibe o número do cartão na tela ocultando os últimos quatro digitos.
 
 **3. Decisões tomadas:**
 
-Quais decisões eu tomei e por quê?
-Os textos do projeto estão em inglês apenas para exercitar a prática.
-Coloquei dois elementos do formulário (expiration date e cvv) dentro de uma div cada, para facilitar o alinhamento lado a lado deste dois elementos.
+Abaixo estão descritas algumas decisões que foram tomadas durante a execução do projeto.
 
-Organizaei os items de CSS por ordem alfabetica para facilitar a manutenção.
-Coloquei as imagns das bandeiras de cartão de crédito em uma div cada, para poder deixa-las com o tamanho padronizado, ocupando 100% do espaco da div.
+Os textos do projeto estão todos em **inglês** apenas para exercitar a prática.
+
+Dois elementos do formulário, mais especificadamente o **expiration date** e o **cvv** foram colocados dentro de divs, para facilitar o alinhamento lado a lado deste dois elementos.
+
+Os **seletores do CSS** foram organizados por ordem alfabética para facilitar a manutenção.
+
+Cada imagem das **bandeiras de cartão** de crédito foram colocadas dentro em uma div, para poder deixa-las com o tamanho padronizado, ocupando 100% do espaco da div.
 
 ## 2. Guia 	📝
 
@@ -48,27 +55,23 @@ Abaixo estão as instruções para que você possa executar este projeto na sua 
 
 **Step 1:**
 
-Verifique se possui algum editor de texto IDE.
+Verifique se você possui algum editor de código-fonte como o VSCode.
 
 **Step 2:**
 
-Verifique se possui o Node.js instalado em sua máquina. Para fazer isso você pode executar abrir o prompt de comando (cmd) e digitar node -v....se seu sistema operacional for windowns. Caso não tenha o node instalado, você poderá instala-lo aqui...
+Verifique se possui o **Node.js** instalado em sua máquina. Para fazer isso você pode executar abrir o prompt de comando (cmd) e digitar node -v, se seu sistema operacional for windowns. Caso não tenha o node instalado, você poderá instala-lo [clicando aqui](https://nodejs.org/en).
 
 **Step 3:**
 
-Assegure que a versão instalada seja X ou superior, faça isso utilizando o comando node -v em seu prompt de comando (cmd).
+Assegure que a versão instalada seja igual ou superior à 12, faça isso utilizando o comando node -v em seu prompt de comando (cmd).
 
 **Step 4:**
 
-Verifique se o npm (gerenciador de pacotes do Node) esta instalado com o comando....
+Verifique se o npm (gerenciador de pacotes do Node) esta instalado com o comando npm -v.
 
 **Step 5:**
 
-Verifique se possui o Git instalado atraves do comando...caso não possua instale aqui...
-
-**Step 6:**
-
-Verifique se possui o Git instalado atraves do comando...caso não possua instale aqui...
+Verifique se possui o Git instalado atraves do comando git --version, caso não possua, [clique aqui](https://git-scm.com/downloads) para instala-lo.
 
 ### Para executar a aplicação 📂
 
@@ -78,11 +81,11 @@ Faça o clone do projeto em um repositório de sua preferência. Para clonar o p
 
 **Step 2:**
 
-Abra o projeto com o editor de texto / IDE.
+Abra o projeto com o editor de código-fonte de sua preferência.
 
 **Step 3:**
 
-Acesse a pasta do projeto e com o prompt de comando de sua preferencia digite o comando "npm install" e pressione o entre para baixar as depedÇencias do projeto em sua máquina. Aguarde até que o processo seja concluído.
+Acesse a pasta do projeto e com o prompt de comando de sua preferencia digite o comando "npm install" e pressione o entre para baixar as depedências do projeto em sua máquina. Aguarde até que o processo seja concluído.
 
 **Step 4:**
 
@@ -93,6 +96,32 @@ Ainda dentro da pasta do projeto digite o comando "npm start" para inicializar o
 ### Para deployar ✅
 
 **Step 1:**
+
+Para subir o projeto no GitHub crie um repositório utilizando a interface gráfica do Github. Pré requisito: ter uma conta no GitHub além de já ter feito a instalação do Git.
+
+**Step :2**
+
+Se tiver feito alterações no projeto digite o comando git add . dentro do Git Bash.
+
+**Step :3**
+
+Se tiver feito alterações no projeto digite o comando git add . dentro do Git Bash.
+
+**Step :4**
+
+Em seguida digite o git commit -m "first commit".
+
+**Step :5**
+
+Em seguida digite o git remote set-url origin [cole a url do seu repositório aqui], para que você trocar o repositório do projeto.
+
+**Step :6**
+
+Em seguida digite o git push -u origin main, para subir definitivamente o projeto para o repositório do GitHub.
+
+**Step :7**
+
+Por fim digite o comando npm run deploy para poder configurar adequadamente o prjeto no GitHub Pages.
 
 ## 3. Contato 📬
 
