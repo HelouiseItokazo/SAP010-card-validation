@@ -22,19 +22,22 @@
   <main>
     <section class="container">
       <h1 class="title">YOUR CREDIT CARD</h1>
-      <div class="card itens-card">
+      <section class="flip-container">
+        <div class="flipper">
+        <section class="card itens-card front">
           <div class="o-flag">Flag</div>
           <div class="o-card-number">XXXX XXXX XXXX XXXX</div>
           <div class="o-card-holder subtitles">Cardholder</div>
           <div class="o-name-on-card change-data">Name on card</div>
           <div class="o-exp subtitles">Exp</div>
           <div class="o-mm-yy change-data">MM/YY</div>
-
-          <div class="o-cvv subtitles">cvv</div>
+        </section>
+        <section class="card back">
+          <div class="o-cvv">cvv</div>
           <div class="o-number-cvv change-data">XXX</div>
-
+        </section>
       </div>
-
+      </section>
       <form class="form">
         <h2 class="o-title title">YOUR CREDIT CARD DETAILS</h2>
 
@@ -55,8 +58,8 @@
         <label for="cvv" class="o-cvv-form">CVV</label>
         <span class="material-icons md-18 o-help-form">help</span>
         <span class="material-icons md-24 color-icon o-lock-form">lock_open</span>
-        <input type="number" name="cvv" class="o-input-cvv-form"
-        onkeypress="if(this.value.length==3) return false;" required>
+        <input type="number" name="cvv" class="o-input-cvv-form" onkeypress="if(this.value.length==3) return false;"
+          required>
 
         <button class="o-btn-save">Save</button>
       </form>

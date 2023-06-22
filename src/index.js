@@ -47,10 +47,22 @@ if(expiryDate){
 const cvv = document.querySelector('.o-input-cvv-form');
 if(cvv){
   cvv.addEventListener('input', () => {
+    const cvvCard = document.querySelector('.o-number-cvv');
     const lockIcon = document.querySelector('.o-lock-form');
     lockIcon.style.color = '#67b8bd';
+    cvvCard.innerHTML = cvv.value;
     if(cvv.value ==  ''){
       lockIcon.style.color = '';
+      cvvCard.innerHTML = 'XXX';
+    }
+    cvvCard.innerHTML = cvv.value;
+    if(cvv.value.length > 2){
+      const flipper = document.querySelector('.flipper');
+      flipper.classList.toggle('flip');
+      setTimeout(() => {
+        flipper.classList.toggle('flip');
+      }, "2000");
     }
   })
 }
+

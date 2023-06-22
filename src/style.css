@@ -29,6 +29,38 @@ main {
   padding-top: 10px;
   width: 290px;
 }
+.flip-container {
+  height: 100%;
+  width: 100%;
+  perspective: 1000px;
+  background-color: blue;
+}
+
+.flipper{
+  width: 100%;
+	height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+}
+
+.front, .back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  backface-visibility: hidden;
+}
+
+.back{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+	transform: rotateY(180deg);
+}
 
 .card {
   background-color: #8308dc;
@@ -36,10 +68,9 @@ main {
   border-radius: 20px;
   color: #fcf6ff;
   height: 160px;
-  margin-bottom: 20px;
-  margin-top: 20px;
   padding: 10px;
   width: 90%;
+
 }
 
 .itens-card {
@@ -105,6 +136,20 @@ main {
   font-size: 12px;
 }
 
+.o-number-cvv{
+  background-color: #fcf6ff;
+  color:#414141;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.o-cvv {
+  color: #fcf6ff;
+  font-size: 18px;
+}
+
 .form{
   background-color: #414141;
   border-radius: 5px;
@@ -113,6 +158,7 @@ main {
   font-size: 12px;
   padding: 10px;
   width: 90%;
+  margin-top: 200px;
 }
 
 input{
@@ -244,5 +290,17 @@ label{
   margin-top: 10px;
 }
 
+.flip-container:hover .flipper{
+	transform: rotateY(180deg);
+	/* se quiser uma animação na vertical,
+	troque por rotateX(180deg)
+	*/
+}
 
+.flip{
+	transform: rotateY(180deg);
+	/* se quiser uma animação na vertical,
+	troque por rotateX(180deg)
+	*/
+}
 
