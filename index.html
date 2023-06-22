@@ -3,74 +3,72 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Tarjeta de crédito válida</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Tarjeta de crédito válida</title>
 </head>
 
 <body>
-  <script type="module" src="index.js"></script>
-
   <header>
     <div id="statusCardNumber">
       <p><span id="cardNumberValidationStatus"></span></p>
     </div>
   </header>
 
-  <main id="content">
-    <div id="fakeMenu"></div>
-    <div>
-      <h1 id="tittle"> Card details </h1>
-      <hr />
-      <div id="container">
-        <div class="divs">
-          <div id="card">
-            <div class="cardItems">
-              <h2 id="lab">&lt L &gt</h2>
-              <p class="txtCard">CREDIT CARD</p>
-              <p class="txtCard" id="cardShowNumber">XXXX XXXX XXXX XXXX</p>
-              <p class="txtCard">Cardholder</p>
-            </div>
-            <img src="./images/chipCard.png" alt="chip Card" id="chipImg">
-          </div>
-          <div id="flags">
-            <div class="flagDiv">
-              <img src="./images/mastercard.png" alt="bandeira masterca" class="flag">
-            </div>
-            <div class="flagDiv">
-              <img src="./images/visa.png" alt="bandeira visa" class="flag">
-            </div>
-            <div class="flagDiv">
-              <img src="./images/elo.png" alt="bandeira elo" class="flag">
-            </div>
-            <div class="flagDiv">
-              <img src="./images/americanExpress2.png" alt="bandeira american express" class="flag">
-            </div>
-          </div>
-        </div>
-        <form id="form" class="divs">
-          <label class="formItems" for="cardNumber"> Card Number </label>
-          <input class="formItems" type="number" name="cardNumber" id="inputCardNumber" onkeypress="if(this.value.length==16) return false;" required>
-          <div class="formItemsSmall" id="expirationDiv">
-          <label class="sideBySide" for="expirationDate" id="expiration"> Expiration date </label>
-          <input class="sideBySide" type="text" name="expirationDate" id="expirationDate" required>
-        </div>
-        <div class="formItemsSmall" id="cvvDiv">
-          <label class="sideBySide" for="cvv" id="cVV"> CVV </label>
-          <input class="sideBySide" type="text" name="cvv" id="cvv" required>
-        </div>
-          <label class="formItems" for="cardholder"> Cardholder </label>
-          <input class="formItems"  type="text" name="cardholder" id="cardholder" required>
-          <button class="formItems" id="submit">Submit</button>
-        </form>
+  <main>
+    <section class="container">
+      <h1 class="title">YOUR CREDIT CARD</h1>
+      <section class="flip-container">
+        <div class="flipper">
+        <section class="card itens-card front">
+          <div class="o-flag">Flag</div>
+          <div class="o-card-number">XXXX XXXX XXXX XXXX</div>
+          <div class="o-card-holder subtitles">Cardholder</div>
+          <div class="o-name-on-card change-data">Name on card</div>
+          <div class="o-exp subtitles">Exp</div>
+          <div class="o-mm-yy change-data">MM/YY</div>
+        </section>
+        <section class="card back">
+          <div class="o-cvv">cvv</div>
+          <div class="o-number-cvv change-data">XXX</div>
+        </section>
       </div>
-    </div>
+      </section>
+      <form class="form">
+        <h2 class="o-title title">YOUR CREDIT CARD DETAILS</h2>
+
+        <label class="o-name-on-card-form" for="card-holder">Name on card</label>
+        <span class="material-icons md-24 color-icon o-face-form">face</span>
+        <input type="text" name="card-holder" class="o-card-holder-form" maxlength="22" required>
+
+        <label class="o-credit-card-number-form" for="card-number">Credit card number</label>
+        <span class="material-icons md-24 color-icon o-card-form">credit_card</span>
+        <input class="o-card-number-form" type="number" name="card-number"
+          onkeypress="if(this.value.length==16) return false;" required>
+
+        <label for="expiration-date" class="o-expiry-form">Expiry date</label>
+        <span class="material-icons md-24 color-icon o-calendar-form">calendar_today</span>
+        <input type="number" name="expiration-date" class="o-mm-yy-form"
+          onkeypress="if(this.value.length==4) return false;" placeholder="MM/YY" required>
+
+        <label for="cvv" class="o-cvv-form">CVV</label>
+        <span class="material-icons md-18 o-help-form">help</span>
+        <span class="material-icons md-24 color-icon o-lock-form">lock_open</span>
+        <input type="number" name="cvv" class="o-input-cvv-form" onkeypress="if(this.value.length==3) return false;"
+          required>
+
+        <button class="o-btn-save">Save</button>
+      </form>
+    </section>
+
   </main>
 
   <footer></footer>
-
+  <script type="module" src="index.js"></script>'
 </body>
 
 </html>

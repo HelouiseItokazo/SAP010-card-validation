@@ -1,176 +1,306 @@
-*{
-  font-family: 'Prompt', sans-serif;
-}
-#content {
-  background-color: #f4f7f5;
-  border: 1px solid #d9d9d9;
-  height: 500px;
-  margin-bottom: 5%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5%;
-  width: 70%;
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-#fakeMenu {
-  background-color: #474350;
-  height: 40px;
-  width: 100%;
-}
+/*
+https://dribbble.com/shots/11235687-Add-credit-card-screen/attachments/2843025?mode=media
+*/
 
-#tittle {
-  color: #474350;
-  margin: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  width: 90%;
-}
-
-hr {
-  width: 90%;
-}
-
-#container{
+main {
+  align-items: center;
+  background-color: #1f2125;
   display: flex;
-  flex-direction: row;
-  height: 360px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-}
-
-.divs{
-  height: 315px;
-  margin: 10px;
-  padding: 10px;
-  width: 50%;
-}
-
-#card{
-  background-color: #ffc857;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  height: 170px;
-  margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  width: 80%;
-}
-
-#chipImg {
-  display: block;
-  height: 50px;
-  margin-left: auto;
-  margin-right: 10px;
-  margin-top: 60px;
-  width: 50px;
-}
-
-.cardItems{
-  font-weight: bold;
-  height: 100%;
-  margin-left: 8px;
-  width: fit-content;
-}
-
-#lab{
-  font-size: 26px;
-  margin-top: 8px;
-  margin-bottom: 45px;
-}
-
-.txtCard{
-  margin: 0px;
-}
-
-#flags{
-  display: flex;
-  flex-direction: row;
-  height: 70px;
+  height: 100vh;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  text-align: center;
-  width: 90%;
+  width: 100vw;
 }
 
-.flagDiv{
-  height: 50px;
-  margin-left: 4px;
-  margin-right: 4px;
+.container {
+  align-items: center;
+  border: 1px solid #888888;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  width: 290px;
+}
+.flip-container {
+  height: 100%;
+  width: 100%;
+  perspective: 1000px;
+  background-color: blue;
+}
+
+.flipper{
+  width: 100%;
+	height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+}
+
+.front, .back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  backface-visibility: hidden;
+}
+
+.back{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+	transform: rotateY(180deg);
+}
+
+.card {
+  background-color: #8308dc;
+  border: #8308dc;
+  border-radius: 20px;
+  color: #fcf6ff;
+  height: 160px;
+  padding: 10px;
+  width: 90%;
+
+}
+
+.itens-card {
+  display: grid;
+  font-size: 14px;
+  grid-template-areas:
+    'x x flag flag'
+    'numberCard numberCard numberCard y'
+    'cardHolder cardHolder  cardHolder exp'
+    'nameOnCard  nameOnCard nameOnCard mmYY';
+}
+
+.o-flag {
+  background-color: #690aae;
+  border: #690aae;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  grid-area: flag;
+  margin: 5px;
+  margin-right: 0;
+  padding: 5px;
+  text-align: center;
   width: 70px;
 }
 
-.flag{
-  height: 100%;
+.o-card-number {
+  font-weight: 800;
+  grid-area: numberCard;
+  height: 20px;
+  margin-bottom: 25px;
+  margin-top: 20px;
+  width: 180px;
+}
+
+.o-card-holder {
+  grid-area: cardHolder;
+  width: 180px;
+}
+
+.o-name-on-card {
+  grid-area: nameOnCard;
+  overflow: hidden;
+  width: 180px;
+}
+
+.o-exp {
+  grid-area: exp;
+}
+
+.o-mm-yy {
+  grid-area: mmYY;
+  width: 44px;
+}
+
+.subtitles{
+  color: #690aae;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.change-data{
+  font-size: 12px;
+}
+
+.o-number-cvv{
+  background-color: #fcf6ff;
+  color:#414141;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
   width: 100%;
 }
 
-#form{
-  display: flex;
-  flex-direction: column;
-  flex-flow: row wrap;
-  justify-content: center;
+.o-cvv {
+  color: #fcf6ff;
+  font-size: 18px;
 }
 
-.formItems {
-  height: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-}
-
-.formItemsSmall {
-  margin-left: auto;
-  margin-right: auto;
-  width: 130px;
-}
-
-.sideBySide{
-  height: 30px;
-  margin-bottom: 5px;
-  margin-top: 5px;
+.form{
+  background-color: #414141;
+  border-radius: 5px;
+  color:#fcf6ff;
+  display: grid;
+  font-size: 12px;
+  padding: 10px;
   width: 90%;
+  margin-top: 200px;
 }
 
-#expirationDiv{
-  margin-left: 50px;
+input{
+  background-color: #1f2125;
+  border: #1f2125;
+  border-radius: 5px;
+  color: #888888;
+  padding-left: 35px;
+  width: 100%;
 }
 
-#cvvDiv {
-  margin-right: 50px;
+.o-title{
+  grid-area: 1/1/1/3;
 }
 
-#expiration, #cVV{
-  margin-left: 5px;
+.o-name-on-card-form{
+  grid-area: 2/1/2/3;
 }
 
-input {
+.o-face-form{
   border: none;
-  border-radius: 4px;
+  grid-area: 3/1/3/1;
   padding: 5px;
-  margin: 2px;
+  z-index: 1;
 }
 
-#statusCardNumber{
-  margin-bottom: 2px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2px;
+.o-card-holder-form{
+  grid-area: 3/1/3/3;
+}
+
+.o-credit-card-number-form{
+  grid-area: 4/1/4/3;
+}
+
+.o-card-form{
+  grid-area: 5/1/5/1;
   padding: 5px;
-  text-align: center;
+  z-index: 1;
+}
+
+.o-card-number-form{
+  grid-area: 5/1/5/3;
+}
+
+.o-expiry-form{
+  grid-area: 6/1/6/1;
+}
+
+.o-calendar-form{
+  grid-area: 7/1/7/1;
+  padding: 5px;
+  z-index: 1;
+}
+
+.o-mm-yy-form{
+  grid-area: 7/1/7/2;
   width: 90%;
 }
 
-#submit{
-  border-radius: 20px;
-  font-size: 16px;
-  height: 50px;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
+.o-cvv-form{
+  grid-area: 6/2/6/2;
+  width: max-content;
 }
+
+.o-help-form{
+  color: #67b8bd;
+  grid-area: 6/2/6/2;
+  margin-top: 10px;
+  padding-left: 30px;
+  width: max-content;
+}
+
+.o-lock-form {
+  grid-area: 7/2/7/2;
+  padding: 5px;
+  z-index: 1;
+}
+
+.o-input-cvv-form {
+  grid-area: 7/2/7/2;
+  width: 90%;
+}
+
+.o-btn-save{
+  background-color: #67b8bd;
+  border: #67b8bd;
+  border-radius: 20px;
+  color: #fcf6ff;
+  font-size: 14px;
+  font-weight: bold;
+  grid-area: 8/1/8/3;
+  height: 45px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 {
+  align-items: center;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  width: max-content;
+}
+
+.title {
+  color: #888888;
+  font-size: 12px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.color-icon{
+  color:#888888;
+}
+
+input[type=text]:focus{
+  color:#fcf6ff;
+  outline-color:#67b8bd;
+}
+
+input[type=number]:focus{
+  color:#fcf6ff;
+  outline-color:#67b8bd;
+  outline-offset: -2px;
+}
+
+label{
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+
+.flip-container:hover .flipper{
+	transform: rotateY(180deg);
+	/* se quiser uma animação na vertical,
+	troque por rotateX(180deg)
+	*/
+}
+
+.flip{
+	transform: rotateY(180deg);
+	/* se quiser uma animação na vertical,
+	troque por rotateX(180deg)
+	*/
+}
+
