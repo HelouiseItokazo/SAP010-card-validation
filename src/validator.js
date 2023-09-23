@@ -88,6 +88,42 @@ const validator = {
 
   },//endMaskify
 
+  isDateValid : (inputDateString) => {
+    let inputMonth = inputDateString.substring(0, 2);
+
+    const monthOfYearString = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+
+    if(!monthOfYearString .includes(inputMonth)){
+      return false;
+    }
+    let currentDate = new Date();
+    let currentMonth = currentDate.getMonth()+1;
+    const monthOfYearInt = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    if(monthOfYearInt.includes(currentMonth)){
+      currentMonth = currentMonth.toString().padStart(2, '0');
+    } else {
+      currentMonth = currentMonth.toString();
+    }
+
+    let inputYear = inputDateString.substring(2, 4);
+
+    let currentYear = currentDate.getFullYear().toString().substring(2,4);
+    if(inputYear < currentYear) {
+      return false;
+    }
+    inputDateString = inputDateString.split("").reverse().join("");
+
+    currentDate = currentMonth + currentYear;
+    currentDate = currentDate.split("").reverse().join("");
+
+    if(inputDateString < currentDate){
+      return false;
+    }
+
+    return true;
+
+  }
+
 }//endValidator
 
 export default validator;

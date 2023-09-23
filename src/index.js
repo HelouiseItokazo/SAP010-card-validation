@@ -49,14 +49,21 @@ if(expiryDate){
       calendarIcon.style = '';
     }
 
+    const month = expiryDate.value.substring(0, 2);
+    const year = expiryDate.value.substring(2, 5);
+
+    const dateParam = month+year;
+
+
     if(!expiryDate.validity.patternMismatch && expiryDate.value.length === 4){
-      const month = expiryDate.value.substring(0, 2);
-      const year = expiryDate.value.substring(2, 5);
+      console.log(dateParam);
+      if(!validator.isDateValid(dateParam)){
+        return expiryDate.value = '';
+      };
       const date = month + '/' + year;
       expCard.innerHTML = date;
       return expiryDate.value = date;
     }
-
   })
 }
 
