@@ -43,16 +43,16 @@
 
         <label class="o-name-on-card-form" for="card-holder">Name on card</label>
         <span class="material-icons md-24 color-icon o-face-form">face</span>
-        <input type="text" name="card-holder" class="o-card-holder-form" maxlength="22" required>
+        <input type="text" id="validate-name" name="card-holder" class="o-card-holder-form" maxlength="20" pattern="[a-zA-Z]*" required>
 
         <label class="o-credit-card-number-form" for="card-number">Credit card number</label>
         <span class="material-icons md-24 color-icon o-card-form">credit_card</span>
         <input class="o-card-number-form" type="number" name="card-number"
-          onkeypress="if(this.value.length==16) return false;" required>
+          onkeypress="if(this.value.length==16) return false;" min="0" oninput="validity.valid||(value='');" required>
 
         <label for="expiration-date" class="o-expiry-form">Expiry date</label>
         <span class="material-icons md-24 color-icon o-calendar-form">calendar_today</span>
-        <input type="number" name="expiration-date" class="o-mm-yy-form"
+        <input type="text" name="expiration-date" class="o-mm-yy-form" pattern="[0-9]*"
           onkeypress="if(this.value.length==4) return false;" placeholder="MM/YY" required>
 
         <label for="cvv" class="o-cvv-form">CVV</label>

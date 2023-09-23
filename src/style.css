@@ -9,6 +9,17 @@
 https://dribbble.com/shots/11235687-Add-credit-card-screen/attachments/2843025?mode=media
 */
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 main {
   align-items: center;
   background-color: #1f2125;

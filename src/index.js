@@ -8,6 +8,9 @@ if(nameOnCardInput){
     cardHolder.innerHTML = nameOnCardInput.value.toUpperCase();
     const userIcon = document.querySelector('.o-face-form');
     userIcon.style.color = '#67b8bd';
+    if(nameOnCardInput.validity.patternMismatch) {
+      nameOnCardInput.value = '';
+    }
     if(nameOnCardInput.value === ''){
       cardHolder.innerHTML = 'Name on card';
       userIcon.style.color = '';
@@ -31,16 +34,29 @@ if(numberCardInput){
 }
 
 const expiryDate = document.querySelector('.o-mm-yy-form');
+
 if(expiryDate){
   expiryDate.addEventListener('input', ()=>{
     const expCard = document.querySelector('.o-mm-yy');
     const calendarIcon = document.querySelector('.o-calendar-form');
     calendarIcon.style.color = '#67b8bd';
-    expCard.innerHTML = expiryDate.value;
+
+    if(expiryDate.validity.patternMismatch){
+      expiryDate.value ='';
+    }
     if(expiryDate.value == ''){
       expCard.innerHTML = 'MM/YY';
       calendarIcon.style = '';
     }
+
+    if(!expiryDate.validity.patternMismatch && expiryDate.value.length === 4){
+      const month = expiryDate.value.substring(0, 2);
+      const year = expiryDate.value.substring(2, 5);
+      const date = month + '/' + year;
+      expCard.innerHTML = date;
+      return expiryDate.value = date;
+    }
+
   })
 }
 
