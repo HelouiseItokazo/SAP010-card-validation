@@ -2,19 +2,11 @@ const validator = {
 
   isValid: function (inputCardNumber) {
 
-
-    const regexOnlyNumbersNoBlanks = /^\d[^\s\b+$]+$/;
-
-
-    const validatedCardNumbers = regexOnlyNumbersNoBlanks.test(inputCardNumber);
-
     let cardNumber = inputCardNumber.split('').reverse();
-
 
     cardNumber = cardNumber.map(function (item) {
       return parseInt(item, 10);
     });
-
 
     const finalIndex = cardNumber.length - 1;
     let sumOfAllDigits = 0;
