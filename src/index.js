@@ -26,6 +26,12 @@ if(numberCardInput){
     cardIcon.style.color = '#67b8bd'
     const maskedNumber = validator.maskify(numberCardInput.value);
     numberCard.innerHTML = maskedNumber;
+    if(numberCardInput.value.length === 16) {
+      if (!validator.isValid(numberCardInput.value)){
+        console.log('INVALIDO');
+        numberCardInput.value = '';
+      }
+    }
     if(numberCardInput.value === ''){
       numberCard.innerHTML = 'XXXX XXXX XXXX XXXX';
       cardIcon.style = '';
