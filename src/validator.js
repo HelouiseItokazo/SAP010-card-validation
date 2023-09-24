@@ -100,13 +100,15 @@ const validator = {
     let inputYear = inputDateString.substring(2, 4);
 
     let currentYear = currentDate.getFullYear().toString().substring(2,4);
+
     if(inputYear < currentYear) {
       return false;
     }
-    inputDateString = inputDateString.split("").reverse().join("");
+
+    inputDateString = inputDateString.split("").join("");
 
     currentDate = currentMonth + currentYear;
-    currentDate = currentDate.split("").reverse().join("");
+    currentDate = currentDate.split("").join("");
 
     if(inputDateString < currentDate){
       return false;
@@ -114,6 +116,42 @@ const validator = {
 
     return true;
 
+  },
+
+  flag : (numberCard) => {
+
+    let codeFlagOneDigit = parseInt(numberCard[0]);
+    console.log(codeFlagOneDigit);
+
+    let codeFlagFourDigits = parseInt(numberCard.substring(0, 4));
+    console.log(codeFlagFourDigits);
+
+    let visa = 4;
+    //let mastercard = 51 || 52 || 53 || 54 || 55;
+    //let dinersClub = 36 || 38;
+    //let discover = 6011 || 65;
+    let jcb = 35;
+    //let americanExpress = 34 || 37;
+
+    let codeFlagTwoDigits = parseInt(numberCard.substring(0, 2));
+    console.log(codeFlagTwoDigits);
+    console.log(typeof codeFlagTwoDigits);
+
+    if(codeFlagOneDigit === visa) {
+      return 'visa';
+    } else if (codeFlagTwoDigits === 51 || codeFlagTwoDigits === 52 || codeFlagTwoDigits === 53 || codeFlagTwoDigits === 54 || codeFlagTwoDigits === 55) {
+      return 'mastercard';
+    } else if (codeFlagTwoDigits === 36 || codeFlagTwoDigits === 38) {
+      return 'diners club';
+    } else if (codeFlagTwoDigits === jcb) {
+      return 'jcb';
+    } else if (codeFlagTwoDigits === 34 || codeFlagTwoDigits === 37){
+      return 'america express'
+    } else if (codeFlagTwoDigits === 65 || codeFlagFourDigits === 6011) {
+      return 'discover'
+    } else {
+      return '';
+    }
   }
 
 }//endValidator
