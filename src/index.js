@@ -108,3 +108,15 @@ if(cvv){
   })
 }
 
+const doubt = document.querySelector('.o-help-form');
+if(doubt){
+  doubt.addEventListener('mouseenter', () => {
+    console.log(doubt);
+    const popupDoubt = document.getElementById('doubts-about-cvv');
+    popupDoubt.classList.toggle('stack');
+    setTimeout(() => {
+      popupDoubt.classList.toggle('stack');
+    }, "3500");
+
+  });
+}

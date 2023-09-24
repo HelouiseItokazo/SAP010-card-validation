@@ -162,6 +162,7 @@ main {
   font-size: 18px;
 }
 
+
 .form{
   background-color: #414141;
   border-radius: 5px;
@@ -208,11 +209,12 @@ input{
 .o-card-form{
   grid-area: 5/1/5/1;
   padding: 5px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .o-card-number-form{
   grid-area: 5/1/5/3;
+  z-index: 1;
 }
 
 .o-expiry-form{
@@ -233,6 +235,24 @@ input{
 .o-cvv-form{
   grid-area: 6/2/6/2;
   width: max-content;
+}
+
+#doubts-about-cvv {
+  background-color: #690aae;
+  border-radius: 5px;
+  font-size: 10px;
+  grid-area: 5/2/5/3;
+  height: 20px;
+  margin-top: 14px;
+  padding: 2px;
+  opacity: 0;
+  transition: opacity 0.9s;
+  text-align: center;
+}
+
+#doubts-about-cvv.stack {
+  opacity: 1;
+  z-index: +1;
 }
 
 .o-help-form{
