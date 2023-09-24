@@ -26,16 +26,29 @@ if(numberCardInput){
     cardIcon.style.color = '#67b8bd'
     const maskedNumber = validator.maskify(numberCardInput.value);
     numberCard.innerHTML = maskedNumber;
+    const flag = document.querySelector('.o-flag');
     if(numberCardInput.value.length === 16) {
       if (!validator.isValid(numberCardInput.value)){
         console.log('INVALIDO');
         numberCardInput.value = '';
       }
+
     }
     if(numberCardInput.value === ''){
       numberCard.innerHTML = 'XXXX XXXX XXXX XXXX';
       cardIcon.style = '';
+      flag.style.visibility= 'hidden' ;
     }
+
+    if(numberCardInput.value.length === 4) {
+      const result = validator.flag(numberCardInput.value);
+      console.log(result.length)
+      if (result.length !== 0){
+        flag.style.visibility= 'visible';
+        flag.innerHTML = result;
+      }
+    }
+
   })
 }
 
