@@ -17,6 +17,8 @@ if(nameOnCardInput){
     }
   })
 }
+let error = document.querySelector('.error-message');
+let errorBox = document.querySelector('.errors');
 
 const numberCardInput = document.querySelector('.o-card-number-form');
 if(numberCardInput){
@@ -29,8 +31,13 @@ if(numberCardInput){
     const flag = document.querySelector('.o-flag');
     if(numberCardInput.value.length === 16) {
       if (!validator.isValid(numberCardInput.value)){
-        console.log('INVALIDO');
         numberCardInput.value = '';
+        errorBox.classList.toggle('visible');
+        error.innerHTML = 'Número de cartão inválido!'
+        setTimeout(() => {
+          errorBox.classList.toggle('visible');
+          errorBox.classList.toggle('trasition');
+        }, '4000')
       }
 
     }
@@ -44,7 +51,7 @@ if(numberCardInput){
       const result = validator.flag(numberCardInput.value);
       console.log(result.length)
       if (result.length !== 0){
-        flag.style.visibility= 'visible';
+        flag.classList.toggle('visible');
         flag.innerHTML = result;
       }
     }
@@ -62,6 +69,7 @@ if(expiryDate){
 
     if(expiryDate.validity.patternMismatch){
       expiryDate.value ='';
+      error.innerHTML = 'Data inválida!'
     }
     if(expiryDate.value == ''){
       expCard.innerHTML = 'MM/YY';
@@ -77,6 +85,12 @@ if(expiryDate){
     if(!expiryDate.validity.patternMismatch && expiryDate.value.length === 4){
       console.log(dateParam);
       if(!validator.isDateValid(dateParam)){
+        error.innerHTML = 'Data inválida!'
+        errorBox.classList.toggle('visible');
+        setTimeout(() => {
+          errorBox.classList.toggle('visible');
+          errorBox.classList.toggle('trasition');
+        }, '4000')
         return expiryDate.value = '';
       };
       const date = month + '/' + year;
