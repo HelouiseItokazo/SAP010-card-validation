@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <title>Tarjeta de crédito válida</title>
 </head>
 
@@ -20,30 +22,39 @@
   </header>
 
   <main>
+
+    <section class="errors">
+      <div class="errors-content">
+        <span class="material-symbols-outlined">cancel</span>
+        <small class="error-message">Error message</small>
+      </div>
+    </section>
+
     <section class="container">
       <h1 class="title">YOUR CREDIT CARD</h1>
       <section class="flip-container">
         <div class="flipper">
-        <section class="card itens-card front">
-          <div class="o-flag">Flag</div>
-          <div class="o-card-number">XXXX XXXX XXXX XXXX</div>
-          <div class="o-card-holder subtitles">Cardholder</div>
-          <div class="o-name-on-card change-data">Name on card</div>
-          <div class="o-exp subtitles">Exp</div>
-          <div class="o-mm-yy change-data">MM/YY</div>
-        </section>
-        <section class="card back">
-          <div class="o-cvv">cvv</div>
-          <div class="o-number-cvv change-data">XXX</div>
-        </section>
-      </div>
+          <section class="card itens-card front">
+            <div class="o-flag">Flag</div>
+            <div class="o-card-number">XXXX XXXX XXXX XXXX</div>
+            <div class="o-card-holder subtitles">Cardholder</div>
+            <div class="o-name-on-card change-data">Name on card</div>
+            <div class="o-exp subtitles">Exp</div>
+            <div class="o-mm-yy change-data">MM/YY</div>
+          </section>
+          <section class="card back">
+            <div class="o-cvv">cvv</div>
+            <div class="o-number-cvv change-data">XXX</div>
+          </section>
+        </div>
       </section>
       <form class="form">
         <h2 class="o-title title">YOUR CREDIT CARD DETAILS</h2>
 
         <label class="o-name-on-card-form" for="card-holder">Name on card</label>
         <span class="material-icons md-24 color-icon o-face-form">face</span>
-        <input type="text" id="validate-name" name="card-holder" class="o-card-holder-form" maxlength="20" pattern="[a-zA-Z]*" required>
+        <input type="text" id="validate-name" name="card-holder" class="o-card-holder-form" maxlength="20"
+          pattern="[a-zA-Z]*" required>
 
         <label class="o-credit-card-number-form" for="card-number">Credit card number</label>
         <span class="material-icons md-24 color-icon o-card-form">credit_card</span>
