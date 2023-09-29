@@ -9,6 +9,10 @@
 https://dribbble.com/shots/11235687-Add-credit-card-screen/attachments/2843025?mode=media
 */
 
+html{
+  background-color: #1f2125;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -22,7 +26,6 @@ input[type=number] {
 
 main {
   align-items: center;
-  background-color: #1f2125;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -72,10 +75,11 @@ main {
   border-radius: 15px;
   display: flex;
   flex-direction: column;
+  height: 550px;
   justify-content: center;
   padding-bottom: 20px;
   padding-top: 10px;
-  width: 290px;
+  width: 280px;
 }
 
 .flip-container {
@@ -209,7 +213,7 @@ main {
   font-size: 12px;
   padding: 10px;
   width: 90%;
-  margin-top: 200px;
+  margin-top: 170px;
 }
 
 input{
@@ -372,5 +376,10 @@ label{
 	/* se quiser uma animação na vertical,
 	troque por rotateX(180deg)
 	*/
+}
+
+.o-btn-save.disabled {
+  opacity: 0.1;
+  cursor: not-allowed;
 }
 
