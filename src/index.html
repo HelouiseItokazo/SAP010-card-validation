@@ -63,7 +63,7 @@
 
         <label for="expiration-date" class="o-expiry-form">Expiry date</label>
         <span class="material-icons md-24 color-icon o-calendar-form">calendar_today</span>
-        <input type="text" name="expiration-date" class="o-mm-yy-form" pattern="[0-9]*"
+        <input type="text" name="expiration-date" class="o-mm-yy-form" 
           onkeypress="if(this.value.length==4) return false;" placeholder="MM/YY" required>
 
         <label for="cvv" class="o-cvv-form">CVV</label>
@@ -77,7 +77,7 @@
         <input type="number" name="cvv" class="o-input-cvv-form" onkeypress="if(this.value.length==3) return false;"
           required>
 
-        <button class="o-btn-save">Save</button>
+        <button class="o-btn-save disabled" disabled>Save</button>
       </form>
     </section>
 
