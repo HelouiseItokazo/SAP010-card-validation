@@ -23,13 +23,6 @@
 
   <main>
 
-    <section class="errors">
-      <div class="errors-content">
-        <span class="material-symbols-outlined">cancel</span>
-        <small class="error-message">Error message</small>
-      </div>
-    </section>
-
     <section class="container">
       <h1 class="title">YOUR CREDIT CARD</h1>
       <section class="flip-container">
@@ -52,30 +45,66 @@
         <h2 class="o-title title">YOUR CREDIT CARD DETAILS</h2>
 
         <label class="o-name-on-card-form" for="card-holder">Name on card</label>
-        <span class="material-icons md-24 color-icon o-face-form">face</span>
+        <span class="material-icons md-24 color-icon face-icon">face</span>
         <input type="text" id="validate-name" name="card-holder" class="o-card-holder-form" maxlength="20"
           pattern="[a-zA-Z]*" required>
+          <section class="errors">
+            <div class="errors-content">
+              <span class="material-symbols-outlined cancel-icon">cancel</span>
+              <small class="error-message">Error message</small>
+            </div>
+          </section>
 
         <label class="o-credit-card-number-form" for="card-number">Credit card number</label>
         <span class="material-icons md-24 color-icon o-card-form">credit_card</span>
         <input class="o-card-number-form" type="number" name="card-number"
           onkeypress="if(this.value.length==16) return false;" min="0" oninput="validity.valid||(value='');" required>
+          <section class="errors" id="error-number-card">
+            <div class="errors-content">
+              <span class="material-symbols-outlined cancel-icon">cancel</span>
+              <small id="error-message-number-card">Error message</small>
+            </div>
+          </section>
 
-        <label for="expiration-date" class="o-expiry-form">Expiry date</label>
-        <span class="material-icons md-24 color-icon o-calendar-form">calendar_today</span>
-        <input type="text" name="expiration-date" class="o-mm-yy-form" 
-          onkeypress="if(this.value.length==4) return false;" placeholder="MM/YY" required>
-
-        <label for="cvv" class="o-cvv-form">CVV</label>
-        <span class="material-icons md-18 o-help-form">help</span>
-        <section id="doubts-about-cvv">
-          <div>
-            see the back of the card
+        <div class="side-by-side">
+          <div class="group">
+            <label for="expiration-date" class="o-expiry-form">Expiry date</label>
+            <span class="material-icons md-24 color-icon o-calendar-form">calendar_today</span>
+            <input type="text" name="expiration-date" class="o-mm-yy-form
+        half" onkeypress="if(this.value.length==4) return false;" placeholder="MM/YY" required>
+        <section class="errors">
+          <div class="errors-content">
+            <span class="material-symbols-outlined cancel-icon">cancel</span>
+            <small class="error-message">Error message</small>
           </div>
         </section>
-        <span class="material-icons md-24 color-icon o-lock-form">lock_open</span>
-        <input type="number" name="cvv" class="o-input-cvv-form" onkeypress="if(this.value.length==3) return false;"
-          required>
+          </div>
+
+
+
+          <div class="group">
+            <section id="doubts-about-cvv">
+              <div>
+                see the back of the card
+              </div>
+            </section>
+
+          <div class="side-by-side">
+            <label for="cvv" class="o-cvv-form">CVV</label>
+            <span class="material-icons md-18 o-help-form">help</span>
+          </div>
+
+            <span class="material-icons md-24 color-icon o-lock-form">lock_open</span>
+            <input type="number" name="cvv" class="o-input-cvv-form
+        half" onkeypress="if(this.value.length==3) return false;" required>
+        <section class="errors">
+          <div class="errors-content">
+            <span class="material-symbols-outlined cancel-icon">cancel</span>
+            <small class="error-message-number-card">Error message</small>
+          </div>
+        </section>
+          </div>
+        </div>
 
         <button class="o-btn-save disabled" disabled>Save</button>
       </form>

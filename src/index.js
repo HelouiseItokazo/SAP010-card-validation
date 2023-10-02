@@ -17,8 +17,8 @@ if (nameOnCardInput) {
     }
   })
 }
-let error = document.querySelector('.error-message');
-let errorBox = document.querySelector('.errors');
+let error = document.getElementById('error-message-number-card');
+let errorBox = document.getElementById('error-number-card');
 
 const numberCardInput = document.querySelector('.o-card-number-form');
 
